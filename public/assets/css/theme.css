@@ -178,6 +178,26 @@ img{max-width:100%}
 .share-box{display:flex;gap:8px;margin-top:10px}
 .share-box input{flex:1;border:1px solid var(--border);border-radius:4px;padding:8px;font-size:12px}
 
+/* CONFIGURADOR V2 FIX — tabs */
+.configurator-v2{display:grid;grid-template-columns:320px 1fr;gap:18px;padding:18px 0}
+@media(max-width:1000px){.configurator-v2{grid-template-columns:1fr}}
+.configurator-v2 .steps{position:sticky;top:60px;max-height:none}
+.configurator-v2 .step{position:relative;padding-right:36px}
+.configurator-v2 .step .step-check{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:11px;color:#999;border:1px solid #ddd}
+.configurator-v2 .step.done .step-check{background:#1a9e1a;color:#fff;border-color:#1a9e1a}
+.configurator-v2 .step.active .step-check{border-color:var(--red);color:var(--red);background:#fff}
+.configurator-v2 .step.done.active .step-check{background:#1a9e1a;color:#fff}
+.cfg-panels{margin-top:14px;border:1px solid var(--border);border-radius:6px;background:#fff;overflow:hidden}
+.cfg-panel{display:none}
+.cfg-panel.active{display:block}
+.panel-head{padding:12px 14px;background:#f9f9f9;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.panel-head h3{margin:0;font-size:14px;font-family:Poppins,sans-serif}
+.panel-count{font-size:11px;color:#888;background:#fff;border:1px solid var(--border);padding:3px 7px;border-radius:10px}
+.cfg-panel .components-list{max-height:none;overflow:visible}
+.compat-tag{font-size:10px;background:#f0f0f0;color:#555;padding:2px 6px;border-radius:3px;margin-top:4px;display:inline-block}
+.cfg-left .btn{font-size:12px}
+@media(max-width:1000px){.cfg-right{order:-1}.configurator-v2 .steps{position:static}}
+
 /* FOOTER */
 #footer{background:var(--dark);color:#ccc}
 .footer-top{padding:26px 0}
