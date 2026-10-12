@@ -1,0 +1,14 @@
+name: warehouse-child-elite
+display_name: Warehouse Child Elite Digital
+version: 1.0.0
+author:
+  name: "Elite Digital / Inforlândia"
+  email: "dev@elitedigital.pt"
+parent: warehouse
+assets:
+  css:
+    all:
+      - id: theme-custom
+        path: assets/css/custom.css
+        media: all
+        priority: 1000

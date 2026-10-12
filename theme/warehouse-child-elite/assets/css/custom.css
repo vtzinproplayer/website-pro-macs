@@ -1,0 +1,5 @@
+/* Child theme — apenas overrides para novas features */
+:root{ --red:#E30613; }
+.mm-new a{ animation: pulse 2s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.85} }
+.reconditioned-badge{ font-size:11px; }

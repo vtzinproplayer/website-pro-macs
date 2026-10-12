@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS `PREFIX_pc_component` (
+  `id_component` INT AUTO_INCREMENT PRIMARY KEY,
+  `category` VARCHAR(20) NOT NULL,
+  `brand` VARCHAR(80) NOT NULL,
+  `name` VARCHAR(180) NOT NULL,
+  `sku` VARCHAR(40) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `socket` VARCHAR(30) DEFAULT NULL,
+  `ram_type` VARCHAR(10) DEFAULT NULL,
+  `watt_tdp` INT DEFAULT 0,
+  UNIQUE KEY `sku` (`sku`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `PREFIX_pc_build` (
+  `id_build` INT AUTO_INCREMENT PRIMARY KEY,
+  `hash` VARCHAR(32) NOT NULL,
+  `total_price` DECIMAL(10,2) DEFAULT 0,
+  UNIQUE KEY `hash` (`hash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

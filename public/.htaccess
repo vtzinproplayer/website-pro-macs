@@ -1,0 +1,23 @@
+# PrestaShop + Elite Digital — .htaccess
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule . - [E=REWRITEBASE:/]
+RewriteRule ^api$ api.php [QSA,L]
+
+# Recondicionados & Configurador (SEO friendly)
+RewriteRule ^recondicionados/?$ index.php [QSA,L]
+RewriteRule ^configurador/?$ index.php [QSA,L]
+RewriteRule ^recondicionados/(.*)$ index.php [QSA,L]
+
+# PrestaShop core
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options nosniff
+Header set X-XSS-Protection "1; mode=block"
+</IfModule>
