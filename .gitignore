@@ -1,0 +1,29 @@
+# PrestaShop + PHP
+/vendor/
+/node_modules/
+.env
+/var/cache/*
+/var/logs/*
+/public/cache/*
+*.log
+.DS_Store
+Thumbs.db
+
+# PrestaShop generated
+/themes/warehouse/cache/*
+/modules/*/cache/*
+/img/p/*
+/upload/*
+/download/*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Keep empty dirs
+!.gitkeep

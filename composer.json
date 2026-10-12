@@ -1,0 +1,29 @@
+{
+  "name": "elite-digital-pt/elite-digital-clone",
+  "description": "Clone fiel do elitedigital.pt (PrestaShop 8 + Warehouse) com módulos Recondicionados e Configurador de PCs",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1",
+    "smarty/smarty": "^4.3",
+    "prestashop/prestashop": "^8.1",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "EliteDigital\\": "src/"
+    }
+  },
+  "scripts": {
+    "start": "php -S 0.0.0.0:8000 -t public",
+    "test": "phpunit"
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
