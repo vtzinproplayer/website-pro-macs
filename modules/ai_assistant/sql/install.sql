@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `PREFIX_ai_conversation` (
+  `id_conversation` INT AUTO_INCREMENT PRIMARY KEY,
+  `id_customer` INT DEFAULT NULL,
+  `query` TEXT NOT NULL,
+  `recomendacao` JSON DEFAULT NULL,
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

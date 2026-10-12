@@ -5,8 +5,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#E30613">
-  <title>Configurador de PCs | Elite Digital</title>
-  <meta name="description" content="Elite Digital by Inforlândia — Loja powered by PrestaShop. Informática, computadores INSYS, portáteis, gaming. Aveiro, Portugal.">
+  <title>Assistente AI Elite — Monte o seu PC com ajuda | Elite Digital</title>
+  <meta name="description" content="Elite Digital by Inforlândia — Loja powered by PrestaShop. Assistente AI + Recondicionados.">
   <link rel="icon" href="https://www.elitedigital.pt/img/favicon.ico?1631183047">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -40,30 +40,24 @@
 <header id="header" class="desktop-header-style-w-2">
   <div class="header-main">
     <div class="container header-grid">
-      <!-- LOGO -->
       <a href="index.html" class="logo">
         <img src="https://www.elitedigital.pt/img/loja-prestashop-2-logo-1631183047.jpg" alt="Elite Digital" width="170" height="52">
       </a>
-
-      <!-- SEARCH — largo centro como no original -->
       <div class="search-wrap">
-        <form action="/pesquisa" method="get" class="search-form">
-          <input type="text" name="s" placeholder="Pesquisar no catálogo..." autocomplete="off">
+        <form action="/pesquisa" method="get" class="search-form" onsubmit="event.preventDefault(); const q=this.s.value; if(q){window.location='/assistente-ai?pergunta='+encodeURIComponent(q)}">
+          <input type="text" name="s" placeholder="Pergunte à AI: 'PC gaming até 800€' ...">
           <select class="search-cat">
             <option>Todas as categorias</option>
             <option>Portáteis</option>
             <option>Desktops</option>
-            <option>Componentes</option>
-            <option>Periféricos</option>
+            <option>Recondicionados</option>
           </select>
           <button type="submit" aria-label="Pesquisar"><i class="fa fa-search"></i></button>
         </form>
       </div>
-
-      <!-- ICONS -->
       <div class="header-icons">
         <a href="#" class="hi"><i class="fa fa-heart-o"></i><span class="hi-label">Favoritos<br><b>0</b></span></a>
-        <a href="#" class="hi"><i class="fa fa-balance-scale"></i><span class="hi-label">Comparar<br><b>0</b></span></a>
+        <a href="assistente.html" class="hi" style="color:var(--red)"><i class="fa fa-magic"></i><span class="hi-label">Assistente<br><b>AI Elite</b></span></a>
         <a href="#" class="hi"><i class="fa fa-user-o"></i><span class="hi-label">Olá, entre<br><b>Minha conta</b></span></a>
         <a href="#" class="hi cart">
           <span class="cart-icon"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></span>
@@ -73,7 +67,6 @@
     </div>
   </div>
 
-  <!-- MEGAMENU vermelho sticky -->
   <nav class="megamenu">
     <div class="container megamenu-inner">
       <a href="#" class="mm-toggle"><i class="fa fa-bars"></i> TODAS AS CATEGORIAS</a>
@@ -85,10 +78,9 @@
         <li><a href="#">REDE</a></li>
         <li><a href="#">IMPRESSÃO</a></li>
         <li><a href="#">SOFTWARE</a></li>
-        <li><a href="#">SERVIÇOS</a></li>
-        <!-- NOVAS FEATURES -->
-        <li class="mm-new"><a href="recondicionados.html"><span class="badge-new">NOVO</span> ♻️ RECONDICIONADOS</a></li>
-        <li class="mm-new highlight"><a href="configurador.html"><span class="badge-new">NOVO</span> 🛠️ CONFIGURADOR</a></li>
+        <!-- NOVAS FEATURES AI -->
+        <li class="mm-new highlight" style="background:#111;border-radius:4px"><a href="assistente.html" style="color:#fff!important"><span class="badge-new" style="background:var(--red)">AI</span> ✨ ASSISTENTE AI</a></li>
+        <li class="mm-new"><a href="recondicionados.html"><span class="badge-new">NOVO</span> ♻️ RECONDICIONADOS <small style="background:#1a9e1a;color:#fff;padding:1px 5px;border-radius:3px;margin-left:4px">+ AI</small></a></li>
         <li><a href="#" style="color:#ffea00">CAMPANHAS</a></li>
       </ul>
       <div class="mm-promo">
@@ -97,7 +89,6 @@
     </div>
   </nav>
 
-  <!-- MEGA dropdown demo (hidden by CSS hover) -->
   <div class="mega-dropdown">
     <div class="container mega-grid">
       <div><h4>Desktops</h4><a href="#">Desktops Standard</a><a href="#">Desktops Gaming</a><a href="#">Desktops Empresariais</a><a href="#">All-in-One</a><a href="#">Workstations</a></div>
@@ -110,291 +101,150 @@
       </div>
     </div>
   </div>
-
-  <!-- BREADCRUMB for inner pages injected via JS -->
 </header>
 
 <main id="main-page-content">
 
 <div class="breadcrumb">
   <div class="container">
-    <a href="index.html"><i class="fa fa-home"></i> Início</a> <span style="margin:0 6px">/</span> <b>Configurador de PCs</b> <span style="background:var(--red);color:#fff;padding:2px 6px;border-radius:3px;font-size:11px;margin-left:8px">🛠️ NOVO</span>
+    <a href="index.html"><i class="fa fa-home"></i> Início</a> <span style="margin:0 6px">/</span> <b>Assistente AI Elite</b> <span style="background:#111;color:#ffea00;padding:2px 6px;border-radius:3px;font-size:11px;margin-left:8px">✨ NOVO • Beta</span>
   </div>
 </div>
 
 <div class="container">
-  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 0 0">
-    <h1 style="margin:0;font-family:Poppins,sans-serif;font-size:24px">🛠️ Configurador de PCs</h1>
-    <span style="background:#111;color:#ffea00;padding:5px 10px;border-radius:4px;font-size:12px;font-weight:700">Compatibilidade em tempo real • Montagem grátis</span>
-    <span style="margin-left:auto;font-size:13px;color:#555">Passo <b id="stepCounter">1/8</b> • <span id="stepName">Processador (CPU)</span></span>
+  <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center;padding:16px 0 8px">
+    <div>
+      <h1 style="margin:0;font-family:Poppins,sans-serif;font-size:24px;display:flex;gap:10px;align-items:center"><span style="width:38px;height:38px;background:var(--red);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px"><i class="fa fa-magic"></i></span> Assistente AI Elite <span style="background:#111;color:#fff;font-size:11px;padding:3px 8px;border-radius:20px">Inforlândia • PT</span></h1>
+      <p style="margin:6px 0 0;color:#444;font-size:14px;line-height:1.5">Mesmo que <b>não perceba nada de informática</b>, a nossa AI guia-o passo a passo. Pergunte em português corrente — “quero um PC para jogar Fortnite até 700€” — e ela monta a solução ideal, explica cada peça <em>sem jargão</em> e verifica compatibilidade + montagem grátis.</p>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <span style="background:#e6f0ff;color:#0a3d8a;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-check"></i> Compatibilidade garantida</span>
+        <span style="background:#e6f7e6;color:#0a6b0a;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-wrench"></i> Montagem grátis</span>
+        <span style="background:#fff7e6;color:#8a5a00;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-graduation-cap"></i> Explica para iniciantes</span>
+        <span style="background:#f0f0f0;color:#333;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-comments"></i> Fala com humano se quiser</span>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#111,#2a0000);color:#fff;border-radius:10px;padding:14px;display:flex;gap:14px;align-items:center">
+      <img src="https://i.pravatar.cc/100?img=15" alt="AI Avatar" style="width:56px;height:56px;border-radius:50%;border:2px solid #ffea00">
+      <div>
+        <b style="font-size:15px">Olá! Sou a Elite AI 🤖</b><br>
+        <span style="font-size:13px;opacity:.9">Diga-me para que quer o PC e o seu orçamento. Eu trato do resto — e explico cada escolha como se fosse a sua primeira vez.</span>
+        <div style="margin-top:8px;display:flex;gap:6px"><span style="background:#ffea00;color:#111;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:700">PT • Respostas em segundos</span><span style="border:1px solid #555;color:#ccc;padding:3px 8px;border-radius:12px;font-size:11px">Ligada aos recondicionados ♻️</span></div>
+      </div>
+    </div>
   </div>
-  <p style="margin:4px 0 0;color:#555;font-size:13.5px">Clique nos passos à esquerda para escolher cada componente. O preço e a compatibilidade atualizam ao segundo.</p>
 </div>
 
-<div id="configurator-root" class="container configurator-v2">
-  <!-- COLUNA ESQUERDA -->
-  <div class="cfg-left">
-    <div class="steps" id="stepsNav">
-      <div class="step active" data-step="cpu"><div class="step-head"><h4>1. Processador (CPU)</h4><span class="step-price">—</span></div><small>Intel LGA1700 / AMD AM5</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="motherboard"><div class="step-head"><h4>2. Placa Mãe</h4><span class="step-price">—</span></div><small>Filtrada por socket do CPU</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="ram"><div class="step-head"><h4>3. Memória RAM</h4><span class="step-price">—</span></div><small>DDR4 vs DDR5 conforme board</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="gpu"><div class="step-head"><h4>4. Placa Gráfica</h4><span class="step-price">—</span></div><small>Verifica comprimento vs caixa</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="storage"><div class="step-head"><h4>5. Armazenamento</h4><span class="step-price">—</span></div><small>NVMe / SATA</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="case"><div class="step-head"><h4>6. Caixa</h4><span class="step-price">—</span></div><small>ATX / mATX — verifica GPU</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="psu"><div class="step-head"><h4>7. Fonte (PSU)</h4><span class="step-price">—</span></div><small>Calculadora watts automática</small><span class="step-check"><i class="fa fa-check"></i></span></div>
-      <div class="step" data-step="cooler"><div class="step-head"><h4>8. Refrigeração</h4><span class="step-price">—</span></div><small>Air / AIO</small><span class="step-check"><i class="fa fa-check"></i></span></div>
+<div id="ai-root" class="container ai-layout">
+  <!-- ESQUERDA — CHAT + QUESTIONÁRIO -->
+  <div class="ai-left">
+    <!-- CHAT -->
+    <div class="ai-chat">
+      <div class="chat-head"><i class="fa fa-circle" style="color:#1a9e1a;font-size:9px"></i> Assistente Elite AI — tempo médio <b>~18s</b> <span style="margin-left:auto;font-size:11px;color:#888">PT • Memória ligada aos recondicionados</span></div>
+      <div id="chatLog" class="chat-log">
+        <div class="msg ai">
+          <img src="https://i.pravatar.cc/100?img=15" alt="AI">
+          <div class="bubble">
+            <b>Olá! 👋</b> Para o recomendar bem, diga-me em 1 frase: <b>para que vai usar o PC?</b><br>
+            <small>Exemplos: “jogar valorant”, “faculdade / office / zoom”, “editar vídeos”, “não faço ideia, só quero algo que funcione”</small>
+          </div>
+        </div>
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip" data-q="Quero PC gaming até 800€, não percebo nada">🎮 Gaming até 800€</button>
+        <button class="chip" data-q="Preciso para universidade, leve e barato, recondicionado se poupar">🎓 Universidade / leve</button>
+        <button class="chip" data-q="Trabalho escritório + Excel, silencioso">💼 Escritório silencioso</button>
+        <button class="chip" data-q="Não percebo nada, ajuda-me a escolher o melhor custo benefício">😅 Não percebo nada, ajuda!</button>
+      </div>
+      <form id="chatForm" class="chat-input">
+        <input id="chatInput" type="text" placeholder="Escreva aqui... ex: 'Fortnite a 144hz até 900€'">
+        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+      </form>
     </div>
 
-    <div class="cfg-panels">
-      <!-- CPU -->
-      <div class="cfg-panel active" data-panel="cpu">
-        <div class="panel-head"><h3><i class="fa fa-microchip" style="color:var(--red)"></i> Escolha o Processador</h3><span class="panel-count">4 opções</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="cpu-i5" data-comp-name="Core i5-13400F">
-            <img src="https://images.unsplash.com/photo-1555617117-2412cc290a4a?w=100&auto=format&fit=crop&q=60" alt="CPU">
-            <div class="comp-info"><b>Intel Core i5-13400F 10-Core 4.6GHz</b><small>LGA1700 • 65W • 16 Threads • Ideal gaming 1080p</small></div>
-            <div class="comp-price">189,90 €</div>
-            <button class="comp-add" data-pick="cpu" data-comp-id="cpu-i5">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="cpu-i7" data-comp-name="Core i7-14700F">
-            <img src="https://images.unsplash.com/photo-1555617117-2412cc290a4a?w=100&auto=format&fit=crop&q=60" alt="CPU">
-            <div class="comp-info"><b>Intel Core i7-14700F 20-Core 5.4GHz</b><small>LGA1700 • 65W • 28 Threads</small></div>
-            <div class="comp-price">389,90 €</div>
-            <button class="comp-add" data-pick="cpu" data-comp-id="cpu-i7">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="cpu-r5" data-comp-name="Ryzen 5 7600">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="CPU">
-            <div class="comp-info"><b>AMD Ryzen 5 7600 6-Core 5.1GHz</b><small>AM5 • 65W • DDR5 • AM5 future-proof</small></div>
-            <div class="comp-price">229,90 €</div>
-            <button class="comp-add" data-pick="cpu" data-comp-id="cpu-r5">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="cpu-r7" data-comp-name="Ryzen 7 7800X3D">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="CPU">
-            <div class="comp-info"><b>AMD Ryzen 7 7800X3D 8-Core — Gaming King</b><small>AM5 • 120W • 3D V-Cache</small></div>
-            <div class="comp-price">449,00 €</div>
-            <button class="comp-add" data-pick="cpu" data-comp-id="cpu-r7">Escolher</button>
+    <!-- QUESTIONÁRIO GUIADO (para inexperientes) -->
+    <div class="ai-quiz">
+      <h3><i class="fa fa-list-ol" style="color:var(--red)"></i> Ou responda ao questionário guiado <span style="font-weight:400;color:#888;font-size:12px">(recomendado se é a 1ª vez)</span></h3>
+      <div class="quiz-grid">
+        <div class="q-group">
+          <label>1. Para que vai usar?</label>
+          <div class="options" id="optUso">
+            <button class="opt" data-uso="gaming">🎮 Gaming</button>
+            <button class="opt" data-uso="universidade">🎓 Estudo / Universidade</button>
+            <button class="opt" data-uso="escritorio">💼 Escritório / Excel</button>
+            <button class="opt" data-uso="edicao">🎬 Edição Vídeo / Design</button>
+            <button class="opt" data-uso="programacao">💻 Programação</button>
+            <button class="opt" data-uso="naosei">😅 Não sei / Uso geral</button>
           </div>
         </div>
-      </div>
-
-      <!-- MOTHERBOARD -->
-      <div class="cfg-panel" data-panel="motherboard">
-        <div class="panel-head"><h3><i class="fa fa-server" style="color:var(--red)"></i> Placa Mãe</h3><span class="panel-count">compatíveis destacadas</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="mb-b760" data-comp-name="ASUS PRIME B760M-A WIFI" data-socket="LGA1700" data-ram="DDR4">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="MB">
-            <div class="comp-info"><b>ASUS PRIME B760M-A WIFI DDR4</b><small>LGA1700 • mATX • 2x M.2 • Wi-Fi 6</small><span class="compat-tag">LGA1700 • DDR4</span></div>
-            <div class="comp-price">139,90 €</div>
-            <button class="comp-add" data-pick="motherboard" data-comp-id="mb-b760">Escolher</button>
+        <div class="q-group">
+          <label>2. Orçamento</label>
+          <div style="display:flex;gap:10px;align-items:center">
+            <input id="orcRange" type="range" min="300" max="2000" value="700" step="50" style="flex:1;accent-color:var(--red)">
+            <b id="orcVal" style="min-width:90px;text-align:center;background:#111;color:#ffea00;padding:6px 10px;border-radius:6px">700 €</b>
           </div>
-          <div class="comp-card" data-comp-id="mb-b650" data-comp-name="MSI B650 GAMING PLUS WIFI" data-socket="AM5" data-ram="DDR5">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="MB">
-            <div class="comp-info"><b>MSI B650 GAMING PLUS WIFI DDR5</b><small>AM5 • ATX • 3x M.2 • Wi-Fi 6E</small><span class="compat-tag">AM5 • DDR5</span></div>
-            <div class="comp-price">179,90 €</div>
-            <button class="comp-add" data-pick="motherboard" data-comp-id="mb-b650">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="mb-z790" data-comp-name="Gigabyte Z790 AORUS ELITE" data-socket="LGA1700" data-ram="DDR5">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="MB">
-            <div class="comp-info"><b>Gigabyte Z790 AORUS ELITE DDR5</b><small>LGA1700 • ATX • 4x M.2 • OC</small><span class="compat-tag">LGA1700 • DDR5</span></div>
-            <div class="comp-price">269,90 €</div>
-            <button class="comp-add" data-pick="motherboard" data-comp-id="mb-z790">Escolher</button>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#888"><span>300€ recond.</span><span>2000€ topo</span></div>
+        </div>
+        <div class="q-group">
+          <label>3. Experiência</label>
+          <div class="options small">
+            <button class="opt active" data-exp="inexperiente">😅 Inexperiente — explica tudo simples</button>
+            <button class="opt" data-exp="intermedio">👍 Já percebo algo</button>
+            <button class="opt" data-exp="avancado">🛠️ Já montei PCs</button>
           </div>
         </div>
-      </div>
-
-      <!-- RAM -->
-      <div class="cfg-panel" data-panel="ram">
-        <div class="panel-head"><h3><i class="fa fa-memory" style="color:var(--red)"></i> Memória RAM</h3><span class="panel-count">filtrada por board</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="ram-16-ddr4" data-comp-name="Corsair 16GB DDR4 3200" data-ram="DDR4">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="RAM">
-            <div class="comp-info"><b>Corsair Vengeance 16GB (2x8) DDR4 3200MHz CL16</b><small>DDR4 • Para B760 DDR4 • XMP</small><span class="compat-tag">DDR4</span></div>
-            <div class="comp-price">49,90 €</div>
-            <button class="comp-add" data-pick="ram" data-comp-id="ram-16-ddr4">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="ram-32-ddr5" data-comp-name="Kingston 32GB DDR5 5600" data-ram="DDR5">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="RAM">
-            <div class="comp-info"><b>Kingston FURY Beast 32GB (2x16) DDR5 5600MHz</b><small>DDR5 • Para B650/Z790</small><span class="compat-tag">DDR5</span></div>
-            <div class="comp-price">119,90 €</div>
-            <button class="comp-add" data-pick="ram" data-comp-id="ram-32-ddr5">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="ram-trident" data-comp-name="G.Skill 32GB DDR5 6000" data-ram="DDR5">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="RAM">
-            <div class="comp-info"><b>G.Skill Trident Z5 32GB DDR5 6000 CL30</b><small>DDR5 • EXPO/XMP • RGB</small><span class="compat-tag">DDR5</span></div>
-            <div class="comp-price">139,90 €</div>
-            <button class="comp-add" data-pick="ram" data-comp-id="ram-trident">Escolher</button>
+        <div class="q-group">
+          <label>4. Prefere novo ou recondicionado?</label>
+          <div class="options small">
+            <button class="opt active" data-pref="indiferente">🤝 Melhor negócio (AI escolhe)</button>
+            <button class="opt" data-pref="novo">✨ Só novo</button>
+            <button class="opt" data-pref="recondicionado">♻️ Prefiro recondicionado (poupa + sustentável)</button>
           </div>
         </div>
+        <button id="btnGerar" class="btn btn-red" style="width:100%;justify-content:center;padding:14px;font-size:14px;margin-top:6px"><i class="fa fa-magic"></i> Gerar recomendação da AI</button>
+        <p style="font-size:11px;color:#888;text-align:center;margin:6px 0 0"><i class="fa fa-lock"></i> Sem registo • Resposta em ~12s • Compatibilidade verificada • Montagem grátis Inforlândia</p>
       </div>
-
-      <!-- GPU -->
-      <div class="cfg-panel" data-panel="gpu">
-        <div class="panel-head"><h3><i class="fa fa-desktop" style="color:var(--red)"></i> Placa Gráfica</h3><span class="panel-count">verifica PSU & caixa</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="gpu-4060" data-comp-name="ASUS RTX 4060 8GB" data-watt="115" data-len="227">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="GPU">
-            <div class="comp-info"><b>ASUS GeForce RTX 4060 Dual OC 8GB</b><small>115W • 227mm • HDMI+3xDP • DLSS 3</small><span class="compat-tag">115W • 227mm</span></div>
-            <div class="comp-price">329,90 €</div>
-            <button class="comp-add" data-pick="gpu" data-comp-id="gpu-4060">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="gpu-4070" data-comp-name="MSI RTX 4070 SUPER 12GB" data-watt="220" data-len="307">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="GPU">
-            <div class="comp-info"><b>MSI RTX 4070 SUPER 12GB</b><small>220W • 307mm • Requer 650W</small><span class="compat-tag">220W • 307mm</span></div>
-            <div class="comp-price">629,90 €</div>
-            <button class="comp-add" data-pick="gpu" data-comp-id="gpu-4070">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="gpu-7600" data-comp-name="Sapphire RX 7600 8GB" data-watt="165" data-len="240">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="GPU">
-            <div class="comp-info"><b>Sapphire RX 7600 Pulse 8GB</b><small>165W • 240mm • Ótimo 1080p</small><span class="compat-tag">165W • 240mm</span></div>
-            <div class="comp-price">269,90 €</div>
-            <button class="comp-add" data-pick="gpu" data-comp-id="gpu-7600">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="gpu-5070" data-comp-name="Zotac RTX 5070 Ti 16GB" data-watt="300" data-len="320">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="GPU">
-            <div class="comp-info"><b>Zotac RTX 5070 Ti SOLID 16GB GDDR7</b><small>300W • 320mm • SFF • Requer 750W</small><span class="compat-tag">300W • 320mm</span></div>
-            <div class="comp-price">899,90 €</div>
-            <button class="comp-add" data-pick="gpu" data-comp-id="gpu-5070">Escolher</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- STORAGE -->
-      <div class="cfg-panel" data-panel="storage">
-        <div class="panel-head"><h3><i class="fa fa-hdd-o" style="color:var(--red)"></i> Armazenamento</h3><span class="panel-count">NVMe / SATA</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="ssd-1tb" data-comp-name="Samsung 980 PRO 1TB">
-            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=100&auto=format&fit=crop&q=60" alt="SSD">
-            <div class="comp-info"><b>Samsung 980 PRO 1TB NVMe PCIe 4.0</b><small>7000 MB/s • M.2 • TLC</small></div>
-            <div class="comp-price">89,90 €</div>
-            <button class="comp-add" data-pick="storage" data-comp-id="ssd-1tb">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="ssd-2tb" data-comp-name="WD Black SN770 2TB">
-            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=100&auto=format&fit=crop&q=60" alt="SSD">
-            <div class="comp-info"><b>WD Black SN770 2TB NVMe</b><small>5150 MB/s • Ideal gaming</small></div>
-            <div class="comp-price">129,90 €</div>
-            <button class="comp-add" data-pick="storage" data-comp-id="ssd-2tb">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="hdd-2tb" data-comp-name="Seagate 2TB HDD">
-            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=100&auto=format&fit=crop&q=60" alt="HDD">
-            <div class="comp-info"><b>Seagate Barracuda 2TB 7200rpm</b><small>SATA • Armazenamento extra</small></div>
-            <div class="comp-price">59,90 €</div>
-            <button class="comp-add" data-pick="storage" data-comp-id="hdd-2tb">Escolher</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CASE -->
-      <div class="cfg-panel" data-panel="case">
-        <div class="panel-head"><h3><i class="fa fa-cube" style="color:var(--red)"></i> Caixa</h3><span class="panel-count">verifica GPU & cooler</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="case-m100" data-comp-name="MSI MAG FORGE M100A" data-maxgpu="300">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="Case">
-            <div class="comp-info"><b>MSI MAG FORGE M100A mATX</b><small>Vidro • 4 fans • máx GPU 300mm</small><span class="compat-tag">mATX • 300mm</span></div>
-            <div class="comp-price">49,90 €</div>
-            <button class="comp-add" data-pick="case" data-comp-id="case-m100">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="case-h5" data-comp-name="NZXT H5 Flow ATX" data-maxgpu="365">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="Case">
-            <div class="comp-info"><b>NZXT H5 Flow ATX Mid Tower</b><small>Malha • máx GPU 365mm • Airflow</small><span class="compat-tag">ATX • 365mm</span></div>
-            <div class="comp-price">99,90 €</div>
-            <button class="comp-add" data-pick="case" data-comp-id="case-h5">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="case-4000" data-comp-name="Corsair 4000D Airflow" data-maxgpu="360">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=100&auto=format&fit=crop&q=60" alt="Case">
-            <div class="comp-info"><b>Corsair 4000D Airflow ATX</b><small>Airflow • máx GPU 360mm • 2 fans</small><span class="compat-tag">ATX • 360mm</span></div>
-            <div class="comp-price">94,90 €</div>
-            <button class="comp-add" data-pick="case" data-comp-id="case-4000">Escolher</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- PSU -->
-      <div class="cfg-panel" data-panel="psu">
-        <div class="panel-head"><h3><i class="fa fa-bolt" style="color:var(--red)"></i> Fonte (PSU)</h3><span class="panel-count">calculadora automática</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="psu-550" data-comp-name="Corsair CV550 550W" data-watt="550">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="PSU">
-            <div class="comp-info"><b>Corsair CV550 550W 80+ Bronze</b><small>Não modular • Para builds 65W+115W</small><span class="compat-tag">550W</span></div>
-            <div class="comp-price">54,90 €</div>
-            <button class="comp-add" data-pick="psu" data-comp-id="psu-550">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="psu-650" data-comp-name="Seasonic GX 650W" data-watt="650">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="PSU">
-            <div class="comp-info"><b>Seasonic Focus GX 650W 80+ Gold Modular</b><small>Modular • Recomendado RTX 4070</small><span class="compat-tag">650W Gold</span></div>
-            <div class="comp-price">89,90 €</div>
-            <button class="comp-add" data-pick="psu" data-comp-id="psu-650">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="psu-850" data-comp-name="Be Quiet Straight 850W" data-watt="850">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=100&auto=format&fit=crop&q=60" alt="PSU">
-            <div class="comp-info"><b>Be Quiet! Straight Power 850W Gold</b><small>Modular • Para RTX 5070 Ti</small><span class="compat-tag">850W Gold</span></div>
-            <div class="comp-price">129,90 €</div>
-            <button class="comp-add" data-pick="psu" data-comp-id="psu-850">Escolher</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- COOLER -->
-      <div class="cfg-panel" data-panel="cooler">
-        <div class="panel-head"><h3><i class="fa fa-thermometer-half" style="color:var(--red)"></i> Refrigeração</h3><span class="panel-count">Air / AIO</span></div>
-        <div class="components-list">
-          <div class="comp-card" data-comp-id="cool-212" data-comp-name="Cooler Master Hyper 212">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="Cooler">
-            <div class="comp-info"><b>Cooler Master Hyper 212 Black</b><small>Air • 159mm altura • 4 heatpipes</small></div>
-            <div class="comp-price">39,90 €</div>
-            <button class="comp-add" data-pick="cooler" data-comp-id="cool-212">Escolher</button>
-          </div>
-          <div class="comp-card" data-comp-id="cool-240" data-comp-name="Arctic Liquid Freezer II 240">
-            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&auto=format&fit=crop&q=60" alt="Cooler">
-            <div class="comp-info"><b>Arctic Liquid Freezer II 240 AIO</b><small>AIO 240mm • Para i7/R7 • Silencioso</small></div>
-            <div class="comp-price">89,90 €</div>
-            <button class="comp-add" data-pick="cooler" data-comp-id="cool-240">Escolher</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:8px;margin-top:12px">
-      <button id="btnPrev" class="btn btn-outline" style="flex:1;justify-content:center"><i class="fa fa-arrow-left"></i> Anterior</button>
-      <button id="btnNext" class="btn btn-red" style="flex:1;justify-content:center">Seguinte <i class="fa fa-arrow-right"></i></button>
     </div>
   </div>
 
-  <!-- COLUNA DIREITA — RESUMO -->
-  <div class="cfg-right">
-    <div class="summary" id="summaryBox">
-      <div class="summary-head">
-        <h3><i class="fa fa-shopping-cart"></i> Resumo da Build</h3>
-        <span style="background:#ffea00;color:#111;padding:3px 8px;border-radius:3px;font-size:11px;font-weight:700">PREÇO LIVE</span>
-      </div>
-      <div class="summary-body">
-        <div id="compatBox"></div>
-        <div id="summary-items" style="min-height:80px"></div>
-        <div class="summary-total"><span>Total</span><span id="summary-total">0,00 €</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;margin:10px 0">
-          <div style="background:#f9f9f9;border:1px solid var(--border);border-radius:4px;padding:8px;text-align:center"><div style="color:#888">Potência estimada</div><b id="summary-watt">0 W</b></div>
-          <div style="background:#f9f9f9;border:1px solid var(--border);border-radius:4px;padding:8px;text-align:center"><div style="color:#888">PSU recomendado</div><b id="summary-needed">—</b></div>
-        </div>
-        <div class="watt-bar"><div id="wattFill" class="watt-fill" style="width:0%"></div></div>
-        <div style="font-size:11px;color:#888;text-align:center">Watts / PSU selecionada</div>
-        <button id="btnSave" class="btn btn-red" style="width:100%;margin-top:12px;justify-content:center">💾 Guardar & Partilhar Build</button>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px;justify-content:center" onclick="alert('Adicionado ao carrinho PrestaShop como pack CFG-2026 (demo). Redirecionaria para /carrinho')"><i class="fa fa-shopping-cart"></i> Adicionar Build ao Carrinho</button>
-        <button class="btn btn-outline" style="width:100%;margin-top:8px;justify-content:center" onclick="window.print()"><i class="fa fa-file-pdf-o"></i> Gerar PDF Orçamento</button>
-        <div class="share-box">
-          <input id="shareLink" type="text" placeholder="Link partilhável aparecerá aqui" readonly>
-          <button class="btn btn-outline" onclick="navigator.clipboard.writeText(document.getElementById('shareLink').value); alert('Link copiado!')">Copiar</button>
-        </div>
-        <div style="margin-top:12px;background:#e6f7e6;border:1px solid #a3d9a3;border-radius:4px;padding:10px;font-size:12px;line-height:1.4">
-          <b>✅ Montagem grátis Inforlândia</b><br>
-          Montagem, gestão de cabos, instalação drivers e testes stress 24h incluídos. Garantia total 3 anos no sistema.
+  <!-- DIREITA — RECOMENDAÇÕES AI + CONFIGURADOR SIMPLIFICADO -->
+  <div class="ai-right">
+    <div id="aiResult" class="ai-result empty">
+      <div style="text-align:center;padding:30px 14px;color:#888">
+        <div style="font-size:40px">✨</div>
+        <h3 style="margin:8px 0;color:#333">A sua recomendação aparecerá aqui</h3>
+        <p style="font-size:13px;margin:0">A AI vai explicar cada peça em linguagem simples, mostrar o total, alternativas recondicionadas e um botão <b>“Montar para mim”</b>.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;text-align:left">
+          <div style="border:1px solid var(--border);border-radius:6px;padding:10px;background:#fff"><b style="font-size:12px">Exemplo iniciante:</b><br><span style="font-size:12px;color:#555">“Este processador é o ‘cérebro’. Escolhi o i5 porque é ótimo para jogos e não precisa de mais para o seu orçamento.”</span></div>
+          <div style="border:1px solid var(--border);border-radius:6px;padding:10px;background:#fff"><b style="font-size:12px">Exemplo recondicionado:</b><br><span style="font-size:12px;color:#555">“Encontrei o mesmo desempenho por -38% num Grade A+ com 24 meses garantia. Poupa 312kg CO₂.”</span></div>
         </div>
       </div>
     </div>
+
+    <!-- Mini configurador assistido (aparece após recomendação) -->
+    <div id="miniBuilder" class="mini-builder" style="display:none">
+      <div class="mb-head"><h4><i class="fa fa-cogs"></i> Ajuste fino assistido</h4><small>AI explica cada troca</small></div>
+      <div id="mbList" class="mb-list"></div>
+    </div>
+
+    <div style="margin-top:12px;border:1px solid #a3d9a3;background:#e6f7e6;border-radius:6px;padding:10px;display:flex;gap:10px;align-items:flex-start">
+      <i class="fa fa-shield" style="color:#1a9e1a;font-size:22px;margin-top:2px"></i>
+      <div style="font-size:12px;line-height:1.4"><b>Garantia AI Elite: compatibilidade 100% ou devolvemos.</b> Todos os builds são validados (socket, RAM, PSU, tamanho) e montados/testados 24h pela Inforlândia — mesmo que nunca tenha aberto um PC na vida.</div>
+    </div>
+
     <div style="margin-top:12px;border:1px solid var(--border);border-radius:6px;background:#fff;padding:12px">
-      <h4 style="margin:0 0 8px;font-size:13px"><i class="fa fa-question-circle" style="color:var(--red)"></i> Precisa de ajuda?</h4>
-      <p style="margin:0 0 8px;font-size:12px;color:#555">Fale com um técnico Inforlândia — orçamentos sem compromisso.</p>
-      <a href="#" style="font-size:13px;color:var(--red);font-weight:700"><i class="fa fa-phone"></i> 234 340 800</a> <span style="font-size:12px;color:#888">•</span> <a href="#" style="font-size:13px;color:var(--red);font-weight:700"><i class="fa fa-comments"></i> Chat</a>
+      <h4 style="margin:0 0 8px;font-size:13px"><i class="fa fa-headphones" style="color:var(--red)"></i> Prefere falar com humano?</h4>
+      <p style="margin:0 0 8px;font-size:12px;color:#555">A AI transfere para um técnico Inforlândia em Aveiro sem perder o histórico.</p>
+      <div style="display:flex;gap:8px"><a href="#" class="btn btn-outline" style="flex:1;justify-content:center;font-size:12px"><i class="fa fa-phone"></i> 234 340 800</a><a href="#" class="btn btn-dark" style="flex:1;justify-content:center;font-size:12px"><i class="fa fa-comments"></i> Chat humano</a></div>
     </div>
   </div>
+</div>
+
+<!-- BARRA de confiança -->
+<div class="container" style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+  <div class="feat"><i class="fa fa-graduation-cap"></i><div><b>Explica sem jargão</b><br><span>“RAM é memória rápida…”</span></div></div>
+  <div class="feat"><i class="fa fa-recycle"></i><div><b>Ligada ao catálogo ♻️</b><br><span>Recondicionados em tempo real</span></div></div>
+  <div class="feat"><i class="fa fa-bolt"></i><div><b>Calcula tudo</b><br><span>PSU, fps, bottleneck</span></div></div>
+  <div class="feat"><i class="fa fa-wrench"></i><div><b>Monta por si</b><br><span>Grátis, cabos e testes</span></div></div>
 </div>
 
 </main>
@@ -433,7 +283,7 @@
         <a href="#">Impressão</a>
         <a href="#">Networking</a>
         <a href="recondicionados.html">♻️ Recondicionados</a>
-        <a href="configurador.html">🛠️ Configurador de PCs</a>
+        <a href="assistente.html">🛠️ Configurador de PCs</a>
       </div>
       <div class="f-col">
         <h5>INFORMAÇÕES</h5>

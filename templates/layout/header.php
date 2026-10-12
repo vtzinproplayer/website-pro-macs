@@ -1,6 +1,4 @@
-<?php
-// header.php — replica fiel do header Elite Digital + Warehouse
-?>
+<?php // header.php — replica fiel + novas features AI ?>
 <!-- TOPBAR preto fino -->
 <div class="topbar">
   <div class="container">
@@ -26,30 +24,24 @@
 <header id="header" class="desktop-header-style-w-2">
   <div class="header-main">
     <div class="container header-grid">
-      <!-- LOGO -->
       <a href="/" class="logo">
         <img src="https://www.elitedigital.pt/img/loja-prestashop-2-logo-1631183047.jpg" alt="Elite Digital" width="170" height="52">
       </a>
-
-      <!-- SEARCH — largo centro como no original -->
       <div class="search-wrap">
-        <form action="/pesquisa" method="get" class="search-form">
-          <input type="text" name="s" placeholder="Pesquisar no catálogo..." autocomplete="off">
+        <form action="/pesquisa" method="get" class="search-form" onsubmit="event.preventDefault(); const q=this.s.value; if(q){window.location='/assistente-ai?pergunta='+encodeURIComponent(q)}">
+          <input type="text" name="s" placeholder="Pergunte à AI: 'PC gaming até 800€' ...">
           <select class="search-cat">
             <option>Todas as categorias</option>
             <option>Portáteis</option>
             <option>Desktops</option>
-            <option>Componentes</option>
-            <option>Periféricos</option>
+            <option>Recondicionados</option>
           </select>
           <button type="submit" aria-label="Pesquisar"><i class="fa fa-search"></i></button>
         </form>
       </div>
-
-      <!-- ICONS -->
       <div class="header-icons">
         <a href="#" class="hi"><i class="fa fa-heart-o"></i><span class="hi-label">Favoritos<br><b>0</b></span></a>
-        <a href="#" class="hi"><i class="fa fa-balance-scale"></i><span class="hi-label">Comparar<br><b>0</b></span></a>
+        <a href="/assistente-ai" class="hi" style="color:var(--red)"><i class="fa fa-magic"></i><span class="hi-label">Assistente<br><b>AI Elite</b></span></a>
         <a href="#" class="hi"><i class="fa fa-user-o"></i><span class="hi-label">Olá, entre<br><b>Minha conta</b></span></a>
         <a href="#" class="hi cart">
           <span class="cart-icon"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></span>
@@ -59,7 +51,6 @@
     </div>
   </div>
 
-  <!-- MEGAMENU vermelho sticky -->
   <nav class="megamenu">
     <div class="container megamenu-inner">
       <a href="#" class="mm-toggle"><i class="fa fa-bars"></i> TODAS AS CATEGORIAS</a>
@@ -71,10 +62,9 @@
         <li><a href="#">REDE</a></li>
         <li><a href="#">IMPRESSÃO</a></li>
         <li><a href="#">SOFTWARE</a></li>
-        <li><a href="#">SERVIÇOS</a></li>
-        <!-- NOVAS FEATURES -->
-        <li class="mm-new"><a href="/recondicionados"><span class="badge-new">NOVO</span> ♻️ RECONDICIONADOS</a></li>
-        <li class="mm-new highlight"><a href="/configurador"><span class="badge-new">NOVO</span> 🛠️ CONFIGURADOR</a></li>
+        <!-- NOVAS FEATURES AI -->
+        <li class="mm-new highlight" style="background:#111;border-radius:4px"><a href="/assistente-ai" style="color:#fff!important"><span class="badge-new" style="background:var(--red)">AI</span> ✨ ASSISTENTE AI</a></li>
+        <li class="mm-new"><a href="/recondicionados"><span class="badge-new">NOVO</span> ♻️ RECONDICIONADOS <small style="background:#1a9e1a;color:#fff;padding:1px 5px;border-radius:3px;margin-left:4px">+ AI</small></a></li>
         <li><a href="#" style="color:#ffea00">CAMPANHAS</a></li>
       </ul>
       <div class="mm-promo">
@@ -83,7 +73,6 @@
     </div>
   </nav>
 
-  <!-- MEGA dropdown demo (hidden by CSS hover) -->
   <div class="mega-dropdown">
     <div class="container mega-grid">
       <div><h4>Desktops</h4><a href="#">Desktops Standard</a><a href="#">Desktops Gaming</a><a href="#">Desktops Empresariais</a><a href="#">All-in-One</a><a href="#">Workstations</a></div>
@@ -96,6 +85,4 @@
       </div>
     </div>
   </div>
-
-  <!-- BREADCRUMB for inner pages injected via JS -->
 </header>

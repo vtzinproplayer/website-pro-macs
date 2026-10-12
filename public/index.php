@@ -1,6 +1,5 @@
 <?php
 // Elite Digital — Front Controller (PrestaShop-like, PHP 8.2)
-// DocumentRoot = /public
 declare(strict_types=1);
 session_start();
 
@@ -8,27 +7,31 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = rtrim($uri, '/');
 if ($uri === '') $uri = '/';
 
-// simple router
 $routes = [
   '/' => 'home',
   '/index.php' => 'home',
   '/recondicionados' => 'recondicionados',
-  '/configurador' => 'configurador',
-  '/configurador-pc' => 'configurador',
+  '/assistente' => 'assistente',
+  '/assistente-ai' => 'assistente',
+  '/assistente-ia' => 'assistente',
+  '/configurador' => 'assistente', // legacy redirect
+  '/configurador-pc' => 'assistente',
 ];
 
-// API faux endpoints handled via query
 if (str_starts_with($uri, '/api/')) {
   header('Content-Type: application/json; charset=utf-8');
-  if ($uri === '/api/configurador/components') {
-    // demo JSON from sql
-    $components = [
-      ['id'=>1,'category'=>'cpu','brand'=>'Intel','name'=>'Core i5-13400F','price'=>189.90,'socket'=>'LGA1700','watt'=>65],
-      ['id'=>2,'category'=>'cpu','brand'=>'AMD','name'=>'Ryzen 5 7600','price'=>229.90,'socket'=>'AM5','watt'=>65],
-      ['id'=>3,'category'=>'motherboard','brand'=>'ASUS','name'=>'PRIME B760M-A','price'=>139.90,'socket'=>'LGA1700','ram_type'=>'DDR4'],
-      ['id'=>4,'category'=>'motherboard','brand'=>'MSI','name'=>'B650 GAMING PLUS','price'=>179.90,'socket'=>'AM5','ram_type'=>'DDR5'],
-    ];
-    echo json_encode(['components'=>$components]);
+  if ($uri === '/api/ai/recommend') {
+    $input = json_decode(file_get_contents('php://input'), true) ?? $_GET;
+    $uso = $input['uso'] ?? 'escritorio';
+    $orc = (int)($input['orcamento'] ?? 600);
+    // demo rule-based AI
+    $rec = match(true){
+      $uso==='gaming' && $orc>=1000 => ['tipo'=>'novo','titulo'=>'Build Gaming 1440p: R7 7800X3D + RTX 4070 SUPER','preco'=>1429,'id'=>'build-gaming-pro'],
+      $uso==='gaming' => ['tipo'=>'recondicionado','titulo'=>'Recondicionado: HP Omen i5-12400F RTX 3060 — Grade A+','preco'=>649,'id'=>'rc-hp-omen'],
+      $uso==='universidade' => ['tipo'=>'recondicionado','titulo'=>'Lenovo ThinkPad T14s i7 — Grade A+ 549€ (leve, 14h bateria)','preco'=>549,'id'=>'rc-lenovo'],
+      default => ['tipo'=>'recondicionado','titulo'=>'Dell Latitude 5540 i5 — Grade A+ 549€ (melhor custo/benefício)','preco'=>549,'id'=>'rc-dell']
+    };
+    echo json_encode(['recomendacao'=>$rec,'explicacao'=>'IA Elite: escolha com melhor fps/€ e garantia 24m.']);
     exit;
   }
   echo json_encode(['ok'=>true]);
@@ -37,13 +40,12 @@ if (str_starts_with($uri, '/api/')) {
 
 $page = $routes[$uri] ?? null;
 if (!$page) {
-  // try prefix
   if (str_starts_with($uri, '/recondicionados')) $page='recondicionados';
-  elseif (str_starts_with($uri, '/configurador')) $page='configurador';
+  elseif (str_starts_with($uri, '/assistente')) $page='assistente';
+  elseif (str_starts_with($uri, '/configurador')) $page='assistente';
   else $page='404';
 }
 
-// cart simulation
 if (!isset($_SESSION['cart'])) $_SESSION['cart']=[];
 if (isset($_GET['add_to_cart'])) {
   $_SESSION['cart'][] = $_GET['add_to_cart'];
@@ -51,21 +53,19 @@ if (isset($_GET['add_to_cart'])) {
   exit;
 }
 $cartCount = count($_SESSION['cart']);
-
 function asset($p){ return '/assets/'.ltrim($p,'/'); }
 
-// include template
 $title = match($page){
   'home' => 'EliteDigital — Loja powered by PrestaShop',
-  'recondicionados' => 'Computadores Recondicionados | Elite Digital',
-  'configurador' => 'Configurador de PCs | Elite Digital',
+  'recondicionados' => 'Catálogo Recondicionados + AI | Elite Digital',
+  'assistente' => 'Assistente AI Elite — Monte o seu PC com ajuda | Elite Digital',
   default => 'Página não encontrada | Elite Digital'
 };
 
 ob_start();
 if ($page==='home') include __DIR__.'/../templates/pages/home.php';
 elseif ($page==='recondicionados') include __DIR__.'/../templates/pages/recondicionados.php';
-elseif ($page==='configurador') include __DIR__.'/../templates/pages/configurador.php';
+elseif ($page==='assistente') include __DIR__.'/../templates/pages/assistente.php';
 else include __DIR__.'/../templates/pages/404.php';
 $content = ob_get_clean();
 

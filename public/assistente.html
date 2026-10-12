@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#E30613">
+  <title>Assistente AI Elite — Monte o seu PC com ajuda | Elite Digital</title>
+  <meta name="description" content="Elite Digital by Inforlândia — Loja powered by PrestaShop. Assistente AI + Recondicionados.">
+  <link rel="icon" href="https://www.elitedigital.pt/img/favicon.ico?1631183047">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/theme.css?v=20261012">
+</head>
+<body class="lang-pt country-pt currency-eur layout-full-width page-index">
+
+<!-- TOPBAR preto fino -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span><i class="fa fa-phone"></i> 234 340 800 <small>(Chamada rede fixa nacional)</small></span>
+      <span class="sep">|</span>
+      <a href="#"><i class="fa fa-envelope-o"></i> apoio@elitedigital.pt</a>
+      <span class="sep">|</span>
+      <a href="#"><i class="fa fa-map-marker"></i> Aveiro — Inforlândia</a>
+    </div>
+    <div class="topbar-right">
+      <a href="#">Acompanhar Encomenda</a>
+      <span class="sep">|</span>
+      <a href="#">Lojas</a>
+      <span class="sep">|</span>
+      <a href="#">Contacte-nos</a>
+      <span class="sep">|</span>
+      <a href="#"><i class="fa fa-user-o"></i> Iniciar sessão</a>
+    </div>
+  </div>
+</div>
+
+<header id="header" class="desktop-header-style-w-2">
+  <div class="header-main">
+    <div class="container header-grid">
+      <a href="index.html" class="logo">
+        <img src="https://www.elitedigital.pt/img/loja-prestashop-2-logo-1631183047.jpg" alt="Elite Digital" width="170" height="52">
+      </a>
+      <div class="search-wrap">
+        <form action="/pesquisa" method="get" class="search-form" onsubmit="event.preventDefault(); const q=this.s.value; if(q){window.location='/assistente-ai?pergunta='+encodeURIComponent(q)}">
+          <input type="text" name="s" placeholder="Pergunte à AI: 'PC gaming até 800€' ...">
+          <select class="search-cat">
+            <option>Todas as categorias</option>
+            <option>Portáteis</option>
+            <option>Desktops</option>
+            <option>Recondicionados</option>
+          </select>
+          <button type="submit" aria-label="Pesquisar"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="header-icons">
+        <a href="#" class="hi"><i class="fa fa-heart-o"></i><span class="hi-label">Favoritos<br><b>0</b></span></a>
+        <a href="assistente.html" class="hi" style="color:var(--red)"><i class="fa fa-magic"></i><span class="hi-label">Assistente<br><b>AI Elite</b></span></a>
+        <a href="#" class="hi"><i class="fa fa-user-o"></i><span class="hi-label">Olá, entre<br><b>Minha conta</b></span></a>
+        <a href="#" class="hi cart">
+          <span class="cart-icon"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></span>
+          <span class="hi-label">Carrinho<br><b>0,00 €</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="megamenu">
+    <div class="container megamenu-inner">
+      <a href="#" class="mm-toggle"><i class="fa fa-bars"></i> TODAS AS CATEGORIAS</a>
+      <ul class="mm-links">
+        <li><a href="index.html">INÍCIO</a></li>
+        <li class="has-sub"><a href="#">COMPUTADORES <i class="fa fa-angle-down"></i></a></li>
+        <li class="has-sub"><a href="#">COMPONENTES <i class="fa fa-angle-down"></i></a></li>
+        <li class="has-sub"><a href="#">PERIFÉRICOS <i class="fa fa-angle-down"></i></a></li>
+        <li><a href="#">REDE</a></li>
+        <li><a href="#">IMPRESSÃO</a></li>
+        <li><a href="#">SOFTWARE</a></li>
+        <!-- NOVAS FEATURES AI -->
+        <li class="mm-new highlight" style="background:#111;border-radius:4px"><a href="assistente.html" style="color:#fff!important"><span class="badge-new" style="background:var(--red)">AI</span> ✨ ASSISTENTE AI</a></li>
+        <li class="mm-new"><a href="recondicionados.html"><span class="badge-new">NOVO</span> ♻️ RECONDICIONADOS <small style="background:#1a9e1a;color:#fff;padding:1px 5px;border-radius:3px;margin-left:4px">+ AI</small></a></li>
+        <li><a href="#" style="color:#ffea00">CAMPANHAS</a></li>
+      </ul>
+      <div class="mm-promo">
+        <i class="fa fa-truck"></i> Portes grátis > 75€
+      </div>
+    </div>
+  </nav>
+
+  <div class="mega-dropdown">
+    <div class="container mega-grid">
+      <div><h4>Desktops</h4><a href="#">Desktops Standard</a><a href="#">Desktops Gaming</a><a href="#">Desktops Empresariais</a><a href="#">All-in-One</a><a href="#">Workstations</a></div>
+      <div><h4>Portáteis</h4><a href="#">Portáteis Standard</a><a href="#">Portáteis Gaming</a><a href="#">Portáteis Empresariais</a><a href="#">Rugged</a></div>
+      <div><h4>Componentes</h4><a href="#">Placas Mãe</a><a href="#">Processadores</a><a href="#">Memória</a><a href="#">Placas Gráficas</a><a href="#">Armazenamento</a></div>
+      <div><h4>Periféricos</h4><a href="#">Monitores</a><a href="#">Teclados & Ratos</a><a href="#">Impressoras</a><a href="#">Networking</a></div>
+      <div class="mega-banner">
+        <img src="https://www.elitedigital.pt/img/cms/Banners/14gen/Banner_ELITE_dotFORCE_14th_PT.jpg" alt="INSYS 14th Gen">
+        <p>Novos dotFORCE 14ª Geração</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-page-content">
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html"><i class="fa fa-home"></i> Início</a> <span style="margin:0 6px">/</span> <b>Assistente AI Elite</b> <span style="background:#111;color:#ffea00;padding:2px 6px;border-radius:3px;font-size:11px;margin-left:8px">✨ NOVO • Beta</span>
+  </div>
+</div>
+
+<div class="container">
+  <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center;padding:16px 0 8px">
+    <div>
+      <h1 style="margin:0;font-family:Poppins,sans-serif;font-size:24px;display:flex;gap:10px;align-items:center"><span style="width:38px;height:38px;background:var(--red);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px"><i class="fa fa-magic"></i></span> Assistente AI Elite <span style="background:#111;color:#fff;font-size:11px;padding:3px 8px;border-radius:20px">Inforlândia • PT</span></h1>
+      <p style="margin:6px 0 0;color:#444;font-size:14px;line-height:1.5">Mesmo que <b>não perceba nada de informática</b>, a nossa AI guia-o passo a passo. Pergunte em português corrente — “quero um PC para jogar Fortnite até 700€” — e ela monta a solução ideal, explica cada peça <em>sem jargão</em> e verifica compatibilidade + montagem grátis.</p>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <span style="background:#e6f0ff;color:#0a3d8a;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-check"></i> Compatibilidade garantida</span>
+        <span style="background:#e6f7e6;color:#0a6b0a;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-wrench"></i> Montagem grátis</span>
+        <span style="background:#fff7e6;color:#8a5a00;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-graduation-cap"></i> Explica para iniciantes</span>
+        <span style="background:#f0f0f0;color:#333;padding:5px 10px;border-radius:20px;font-size:12px"><i class="fa fa-comments"></i> Fala com humano se quiser</span>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#111,#2a0000);color:#fff;border-radius:10px;padding:14px;display:flex;gap:14px;align-items:center">
+      <img src="https://i.pravatar.cc/100?img=15" alt="AI Avatar" style="width:56px;height:56px;border-radius:50%;border:2px solid #ffea00">
+      <div>
+        <b style="font-size:15px">Olá! Sou a Elite AI 🤖</b><br>
+        <span style="font-size:13px;opacity:.9">Diga-me para que quer o PC e o seu orçamento. Eu trato do resto — e explico cada escolha como se fosse a sua primeira vez.</span>
+        <div style="margin-top:8px;display:flex;gap:6px"><span style="background:#ffea00;color:#111;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:700">PT • Respostas em segundos</span><span style="border:1px solid #555;color:#ccc;padding:3px 8px;border-radius:12px;font-size:11px">Ligada aos recondicionados ♻️</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ai-root" class="container ai-layout">
+  <!-- ESQUERDA — CHAT + QUESTIONÁRIO -->
+  <div class="ai-left">
+    <!-- CHAT -->
+    <div class="ai-chat">
+      <div class="chat-head"><i class="fa fa-circle" style="color:#1a9e1a;font-size:9px"></i> Assistente Elite AI — tempo médio <b>~18s</b> <span style="margin-left:auto;font-size:11px;color:#888">PT • Memória ligada aos recondicionados</span></div>
+      <div id="chatLog" class="chat-log">
+        <div class="msg ai">
+          <img src="https://i.pravatar.cc/100?img=15" alt="AI">
+          <div class="bubble">
+            <b>Olá! 👋</b> Para o recomendar bem, diga-me em 1 frase: <b>para que vai usar o PC?</b><br>
+            <small>Exemplos: “jogar valorant”, “faculdade / office / zoom”, “editar vídeos”, “não faço ideia, só quero algo que funcione”</small>
+          </div>
+        </div>
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip" data-q="Quero PC gaming até 800€, não percebo nada">🎮 Gaming até 800€</button>
+        <button class="chip" data-q="Preciso para universidade, leve e barato, recondicionado se poupar">🎓 Universidade / leve</button>
+        <button class="chip" data-q="Trabalho escritório + Excel, silencioso">💼 Escritório silencioso</button>
+        <button class="chip" data-q="Não percebo nada, ajuda-me a escolher o melhor custo benefício">😅 Não percebo nada, ajuda!</button>
+      </div>
+      <form id="chatForm" class="chat-input">
+        <input id="chatInput" type="text" placeholder="Escreva aqui... ex: 'Fortnite a 144hz até 900€'">
+        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+      </form>
+    </div>
+
+    <!-- QUESTIONÁRIO GUIADO (para inexperientes) -->
+    <div class="ai-quiz">
+      <h3><i class="fa fa-list-ol" style="color:var(--red)"></i> Ou responda ao questionário guiado <span style="font-weight:400;color:#888;font-size:12px">(recomendado se é a 1ª vez)</span></h3>
+      <div class="quiz-grid">
+        <div class="q-group">
+          <label>1. Para que vai usar?</label>
+          <div class="options" id="optUso">
+            <button class="opt" data-uso="gaming">🎮 Gaming</button>
+            <button class="opt" data-uso="universidade">🎓 Estudo / Universidade</button>
+            <button class="opt" data-uso="escritorio">💼 Escritório / Excel</button>
+            <button class="opt" data-uso="edicao">🎬 Edição Vídeo / Design</button>
+            <button class="opt" data-uso="programacao">💻 Programação</button>
+            <button class="opt" data-uso="naosei">😅 Não sei / Uso geral</button>
+          </div>
+        </div>
+        <div class="q-group">
+          <label>2. Orçamento</label>
+          <div style="display:flex;gap:10px;align-items:center">
+            <input id="orcRange" type="range" min="300" max="2000" value="700" step="50" style="flex:1;accent-color:var(--red)">
+            <b id="orcVal" style="min-width:90px;text-align:center;background:#111;color:#ffea00;padding:6px 10px;border-radius:6px">700 €</b>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#888"><span>300€ recond.</span><span>2000€ topo</span></div>
+        </div>
+        <div class="q-group">
+          <label>3. Experiência</label>
+          <div class="options small">
+            <button class="opt active" data-exp="inexperiente">😅 Inexperiente — explica tudo simples</button>
+            <button class="opt" data-exp="intermedio">👍 Já percebo algo</button>
+            <button class="opt" data-exp="avancado">🛠️ Já montei PCs</button>
+          </div>
+        </div>
+        <div class="q-group">
+          <label>4. Prefere novo ou recondicionado?</label>
+          <div class="options small">
+            <button class="opt active" data-pref="indiferente">🤝 Melhor negócio (AI escolhe)</button>
+            <button class="opt" data-pref="novo">✨ Só novo</button>
+            <button class="opt" data-pref="recondicionado">♻️ Prefiro recondicionado (poupa + sustentável)</button>
+          </div>
+        </div>
+        <button id="btnGerar" class="btn btn-red" style="width:100%;justify-content:center;padding:14px;font-size:14px;margin-top:6px"><i class="fa fa-magic"></i> Gerar recomendação da AI</button>
+        <p style="font-size:11px;color:#888;text-align:center;margin:6px 0 0"><i class="fa fa-lock"></i> Sem registo • Resposta em ~12s • Compatibilidade verificada • Montagem grátis Inforlândia</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIREITA — RECOMENDAÇÕES AI + CONFIGURADOR SIMPLIFICADO -->
+  <div class="ai-right">
+    <div id="aiResult" class="ai-result empty">
+      <div style="text-align:center;padding:30px 14px;color:#888">
+        <div style="font-size:40px">✨</div>
+        <h3 style="margin:8px 0;color:#333">A sua recomendação aparecerá aqui</h3>
+        <p style="font-size:13px;margin:0">A AI vai explicar cada peça em linguagem simples, mostrar o total, alternativas recondicionadas e um botão <b>“Montar para mim”</b>.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;text-align:left">
+          <div style="border:1px solid var(--border);border-radius:6px;padding:10px;background:#fff"><b style="font-size:12px">Exemplo iniciante:</b><br><span style="font-size:12px;color:#555">“Este processador é o ‘cérebro’. Escolhi o i5 porque é ótimo para jogos e não precisa de mais para o seu orçamento.”</span></div>
+          <div style="border:1px solid var(--border);border-radius:6px;padding:10px;background:#fff"><b style="font-size:12px">Exemplo recondicionado:</b><br><span style="font-size:12px;color:#555">“Encontrei o mesmo desempenho por -38% num Grade A+ com 24 meses garantia. Poupa 312kg CO₂.”</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini configurador assistido (aparece após recomendação) -->
+    <div id="miniBuilder" class="mini-builder" style="display:none">
+      <div class="mb-head"><h4><i class="fa fa-cogs"></i> Ajuste fino assistido</h4><small>AI explica cada troca</small></div>
+      <div id="mbList" class="mb-list"></div>
+    </div>
+
+    <div style="margin-top:12px;border:1px solid #a3d9a3;background:#e6f7e6;border-radius:6px;padding:10px;display:flex;gap:10px;align-items:flex-start">
+      <i class="fa fa-shield" style="color:#1a9e1a;font-size:22px;margin-top:2px"></i>
+      <div style="font-size:12px;line-height:1.4"><b>Garantia AI Elite: compatibilidade 100% ou devolvemos.</b> Todos os builds são validados (socket, RAM, PSU, tamanho) e montados/testados 24h pela Inforlândia — mesmo que nunca tenha aberto um PC na vida.</div>
+    </div>
+
+    <div style="margin-top:12px;border:1px solid var(--border);border-radius:6px;background:#fff;padding:12px">
+      <h4 style="margin:0 0 8px;font-size:13px"><i class="fa fa-headphones" style="color:var(--red)"></i> Prefere falar com humano?</h4>
+      <p style="margin:0 0 8px;font-size:12px;color:#555">A AI transfere para um técnico Inforlândia em Aveiro sem perder o histórico.</p>
+      <div style="display:flex;gap:8px"><a href="#" class="btn btn-outline" style="flex:1;justify-content:center;font-size:12px"><i class="fa fa-phone"></i> 234 340 800</a><a href="#" class="btn btn-dark" style="flex:1;justify-content:center;font-size:12px"><i class="fa fa-comments"></i> Chat humano</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- BARRA de confiança -->
+<div class="container" style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+  <div class="feat"><i class="fa fa-graduation-cap"></i><div><b>Explica sem jargão</b><br><span>“RAM é memória rápida…”</span></div></div>
+  <div class="feat"><i class="fa fa-recycle"></i><div><b>Ligada ao catálogo ♻️</b><br><span>Recondicionados em tempo real</span></div></div>
+  <div class="feat"><i class="fa fa-bolt"></i><div><b>Calcula tudo</b><br><span>PSU, fps, bottleneck</span></div></div>
+  <div class="feat"><i class="fa fa-wrench"></i><div><b>Monta por si</b><br><span>Grátis, cabos e testes</span></div></div>
+</div>
+
+</main>
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <h5>ELITE DIGITAL</h5>
+        <p class="f-desc">Loja de informática da <b>Inforlândia</b> — Aveiro.<br>Desde 1986 a equipar Portugal com tecnologia INSYS.</p>
+        <p><i class="fa fa-map-marker"></i> Zona Industrial de Taboeira, Aveiro<br>
+        <i class="fa fa-phone"></i> 234 340 800<br>
+        <i class="fa fa-envelope"></i> apoio@elitedigital.pt</p>
+        <div class="social">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube-play"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>APOIO AO CLIENTE</h5>
+        <a href="#">Contacte-nos</a>
+        <a href="#">Acompanhar encomenda</a>
+        <a href="#">Trocas e Devoluções</a>
+        <a href="#">Garantias</a>
+        <a href="#">Perguntas Frequentes</a>
+        <a href="#">Reparações Escola Digital</a>
+        <a href="#">Seguros</a>
+      </div>
+      <div class="f-col">
+        <h5>CATEGORIAS</h5>
+        <a href="#">Computadores</a>
+        <a href="#">Portáteis</a>
+        <a href="#">Componentes</a>
+        <a href="#">Periféricos</a>
+        <a href="#">Impressão</a>
+        <a href="#">Networking</a>
+        <a href="recondicionados.html">♻️ Recondicionados</a>
+        <a href="assistente.html">🛠️ Configurador de PCs</a>
+      </div>
+      <div class="f-col">
+        <h5>INFORMAÇÕES</h5>
+        <a href="#">Sobre nós — Inforlândia</a>
+        <a href="#">Termos e Condições</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Livro de Reclamações</a>
+        <a href="#">RAA — Resolução Alternativa</a>
+        <p class="mt"><b>Horário:</b><br>Seg-Sex 09:00-19:00<br>Sáb 09:00-13:00</p>
+      </div>
+      <div class="f-col newsletter">
+        <h5>NEWSLETTER</h5>
+        <p>Receba promoções e novidades INSYS.</p>
+        <form class="nl-form" onsubmit="event.preventDefault(); alert('Subscrito! (demo)');">
+          <input type="email" placeholder="O seu e-mail" required>
+          <button type="submit"><i class="fa fa-paper-plane"></i></button>
+        </form>
+        <div class="payments">
+          <img src="https://www.elitedigital.pt/modules/iqitpaymenticons/views/img/payment_1.png" alt="Pagamentos" style="max-width:100%;filter:grayscale(0)">
+          <small>Multibanco • MB WAY • Visa • PayPal • Cofidis 3x/12x sem juros</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container fb-inner">
+      <span>© 1986-2026 Inforlândia — Sistemas e Serviços de Informática, Lda. • NIF 500 000 000 • Todos os direitos reservados.</span>
+      <span>Loja powered by <b>PrestaShop</b> • Tema <b>Warehouse</b> by IQIT — <em>réplica demo</em></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* mini reassurance bar like original */
+.reassurance{background:#f7f7f7;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0}
+.reassurance .container{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:13px;color:#333}
+.reassurance i{color:#E30613;margin-right:6px}
+</style>
+<div class="reassurance">
+  <div class="container">
+    <span><i class="fa fa-truck"></i> Entrega 24/48h</span>
+    <span><i class="fa fa-shield"></i> Pagamento 100% seguro</span>
+    <span><i class="fa fa-refresh"></i> Devoluções 14 dias</span>
+    <span><i class="fa fa-wrench"></i> Assistência técnica própria</span>
+    <span><i class="fa fa-certificate"></i> Garantia 2-3 anos</span>
+  </div>
+</div>
+
+<script src="/assets/js/app.js?v=20261012"></script>
+</body>
+</html>

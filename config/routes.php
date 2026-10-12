@@ -1,11 +1,15 @@
 <?php
-// config/routes.php — router simples fiel ao PrestaShop dispatcher
+// config/routes.php — router PrestaShop-like
 return [
     '/' => ['controller' => 'HomeController', 'action' => 'index'],
     '/recondicionados' => ['controller' => 'RecondicionadosController', 'action' => 'list'],
     '/recondicionados/{id}' => ['controller' => 'RecondicionadosController', 'action' => 'show'],
-    '/configurador' => ['controller' => 'ConfiguradorController', 'action' => 'index'],
-    '/api/configurador/validate' => ['controller' => 'ConfiguradorController', 'action' => 'validate'],
-    '/api/configurador/save' => ['controller' => 'ConfiguradorController', 'action' => 'save'],
-    '/api/configurador/components' => ['controller' => 'ConfiguradorController', 'action' => 'components'],
+    '/assistente' => ['controller' => 'AiAssistantController', 'action' => 'index'],
+    '/assistente-ai' => ['controller' => 'AiAssistantController', 'action' => 'index'],
+    '/assistente-ia' => ['controller' => 'AiAssistantController', 'action' => 'index'],
+    // legacy redirect
+    '/configurador' => ['controller' => 'AiAssistantController', 'action' => 'index'],
+    '/configurador-pc' => ['controller' => 'AiAssistantController', 'action' => 'index'],
+    '/api/ai/recommend' => ['controller' => 'AiAssistantController', 'action' => 'recommend'],
+    '/api/ai/chat' => ['controller' => 'AiAssistantController', 'action' => 'chat'],
 ];
